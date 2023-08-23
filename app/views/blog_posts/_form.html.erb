@@ -1,0 +1,18 @@
+<%= form_with model: blog_post do |f| %>
+<% if blog_post.errors.any? %>
+    <% blog_post.errors.each do |error| %>
+            <p><%= error.full_message %></p>
+    <% end %>
+<% end %>
+<div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+</div>
+<div>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+</div>
+<%= f.submit  class: "text-indigo-700 font-bold underline" %>
+<% end %>
+
+<%= link_to "All Posts", blog_posts_path,  class: "text-indigo-500 underline"%>
